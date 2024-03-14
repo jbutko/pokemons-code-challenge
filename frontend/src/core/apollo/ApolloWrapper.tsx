@@ -10,6 +10,7 @@ import {
 } from '@apollo/experimental-nextjs-app-support/ssr'
 import { GRAPHQL_BASE_URL } from './constants'
 import { enableDevLogging } from './utils'
+import { TPropsWithChildren } from '@/types/common.types'
 
 enableDevLogging()
 
@@ -44,6 +45,6 @@ const makeClient = () => {
   return ssrClient
 }
 
-export const ApolloWrapper: React.FC<React.PropsWithChildren> = ({ children }) => (
+export const ApolloWrapper: TPropsWithChildren = ({ children }) => (
   <ApolloNextAppProvider makeClient={makeClient}>{children}</ApolloNextAppProvider>
 )
