@@ -12,6 +12,7 @@
   "dependencies": {
     "@apollo/client": "^3.9.6",
     "@apollo/experimental-nextjs-app-support": "^0.8.0",
+    "@carbon/icons-react": "^11.38.0",
     "@carbon/react": "^1.53.0",
     "graphql": "^16.8.1",
     "next": "14.1.3",
