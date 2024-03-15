@@ -1,22 +1,12 @@
-import { getApolloClient } from '@/core/apollo/client'
-import { GET_POKEMON_TYPES } from '@/core/apollo/queries'
+import { Header } from '@/components/organisms/Header/Header'
 
-const Home = async () => {
-  const {
-    data: { pokemonTypes },
-  } = await getApolloClient().query({
-    query: GET_POKEMON_TYPES,
-  })
+export const dynamic = 'force-dynamic'
 
+const Home = () => {
   return (
-    <main>
-      <div>pokemon types:</div>
-      <div>
-        {pokemonTypes.map((type: string) => (
-          <div key={type}>{type}</div>
-        ))}
-      </div>
-    </main>
+    <>
+      <Header />
+    </>
   )
 }
 
