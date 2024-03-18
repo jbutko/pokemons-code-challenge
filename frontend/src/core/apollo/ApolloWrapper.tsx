@@ -17,6 +17,7 @@ enableDevLogging()
 const makeClient = () => {
   const httpLink = new HttpLink({
     uri: GRAPHQL_BASE_URL,
+    fetchOptions: { cache: 'no-store' },
   })
 
   const errorLink = onError(({ graphQLErrors, networkError }) => {

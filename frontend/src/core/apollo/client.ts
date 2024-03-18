@@ -14,6 +14,7 @@ export const errorLink = onError(({ graphQLErrors, networkError }) => {
 
 export const httpLink = new HttpLink({
   uri: GRAPHQL_BASE_URL,
+  fetchOptions: { cache: 'no-store' },
 })
 
 export const { getClient: getApolloClient } = registerApolloClient(

@@ -1,7 +1,10 @@
-import { gql } from '@apollo/client'
+import { TypedDocumentNode, gql } from '@apollo/client'
+import { PokemonConnection, Pokemon } from '@/types/pokemons'
 
-export const GET_POKEMONS = gql`
-  query GetPokemons($query: QueryInput) {
+export const GET_POKEMONS: TypedDocumentNode<{
+  pokemons: PokemonConnection
+}> = gql`
+  query GetPokemons($query: PokemonsQueryInput!) {
     pokemons(query: $query) {
       limit
       offset
@@ -9,6 +12,7 @@ export const GET_POKEMONS = gql`
       edges {
         id
         name
+        image
       }
     }
   }
@@ -23,7 +27,7 @@ export const GET_POKEMON_BY_ID = gql`
   }
 `
 
-export const GET_POKEMON_BY_NAME = gql`
+export const GET_POKEMON_BY_NAME: TypedDocumentNode<Pick<Pokemon, 'id' | 'name'>> = gql`
   query GetPokemonByName($name: String!) {
     pokemonByName(name: $name) {
       id
@@ -32,7 +36,9 @@ export const GET_POKEMON_BY_NAME = gql`
   }
 `
 
-export const GET_POKEMON_TYPES = gql`
+export const GET_POKEMON_TYPES: TypedDocumentNode<{
+  pokemonTypes: string[]
+}> = gql`
   query GetPokemonTypes {
     pokemonTypes
   }
