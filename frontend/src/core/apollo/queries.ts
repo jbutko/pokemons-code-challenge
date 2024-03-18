@@ -13,6 +13,8 @@ export const GET_POKEMONS: TypedDocumentNode<{
         id
         name
         image
+        isFavorite
+        types
       }
     }
   }
