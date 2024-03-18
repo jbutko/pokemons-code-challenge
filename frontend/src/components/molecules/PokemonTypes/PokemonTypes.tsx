@@ -1,24 +1,37 @@
-'use client'
-
-import { Dropdown, DropdownSkeleton } from '@carbon/react'
-import { useQuery } from '@apollo/client'
+import { ComboBox, DropdownSkeleton } from '@carbon/react'
+import { useSuspenseQuery } from '@apollo/client'
 import { GET_POKEMON_TYPES } from '@/core/apollo/queries'
 import styles from './pokemon-types.module.scss'
+import { TNullable } from '@/types/common.types'
+import { useUrlParams } from '@/hooks/useUrlParams'
 
 export const PokemonTypes: React.FC = () => {
-  const { data } = useQuery(GET_POKEMON_TYPES)
+  const { data } = useSuspenseQuery(GET_POKEMON_TYPES)
+  const { setUrlParams, searchParams } = useUrlParams()
+  const SELECTED_ITEM = searchParams.pokemonType
 
   if (!data?.pokemonTypes || !data) return <DropdownSkeleton hideLabel size="lg" className={styles.skeleton} />
 
+  const handleSelect = (selectedItem?: TNullable<string>) =>
+    setUrlParams({
+      pokemonType: selectedItem || '',
+      offset: '0',
+      page: '0',
+    })
+
   return (
-    <Dropdown
-      hideLabel
-      id="default"
-      items={data?.pokemonTypes || []}
-      itemToString={(item: string) => (item ? item : '')}
-      label="Select pokemon type"
+    <ComboBox
+      allowCustomValue={false}
+      id="pokemon-type"
+      items={data?.pokemonTypes}
+      onChange={({ selectedItem }) => handleSelect(selectedItem)}
+      placeholder="Select pokemon type"
+      selectedItem={SELECTED_ITEM}
+      shouldFilterItem={({ item, inputValue }) => item.toLowerCase().includes(inputValue?.toLowerCase() || '')}
       size="lg"
-      titleText="Select pokemon type"
+      downshiftProps={{
+        id: 'pokemon-type',
+      }}
     />
   )
 }

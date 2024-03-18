@@ -10,3 +10,8 @@ export interface TRSCProps<SearchParams = TObject, Params = string> {
   params: Params
   searchParams: SearchParams
 }
+
+export enum EListType {
+  GRID = 'grid',
+  LIST = 'list',
+}
