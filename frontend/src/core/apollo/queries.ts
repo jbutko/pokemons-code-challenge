@@ -15,6 +15,7 @@ export const GET_POKEMONS: TypedDocumentNode<{
         image
         isFavorite
         types
+        sound
       }
     }
   }
@@ -58,6 +59,7 @@ export const GET_POKEMON_BY_NAME: TypedDocumentNode<{ pokemonByName: Pokemon }> 
         id
         image
       }
+      sound
     }
   }
 `

@@ -20,7 +20,7 @@ const Detail: NextPage<TRSCProps<TParams>> = async ({ params: { name } }) => {
 
   return (
     <>
-      <PokemonTile key={pokemonByName.id} data={pokemonByName} showDetails showSimilar />
+      <PokemonTile key={pokemonByName.id} data={pokemonByName} showDetails showSimilar showSound />
     </>
   )
 }

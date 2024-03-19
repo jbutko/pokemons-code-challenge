@@ -9,21 +9,24 @@ import { PokemonTags } from '@/components/molecules/PokemonTags/PokemonTags'
 import { PokemonPowerProfile } from '@/components/molecules/PokemonPowerProfile/PokemonPowerProfile'
 import { PokemonSizeStats } from '@/components/molecules/PokemonSizeStats/PokemonSizeStats'
 import { PokemonEvolutions } from '@/components/molecules/PokemonEvolutions/PokemonEvolutions'
+import { PlaySound } from '@/components/molecules/PlaySound/PlaySound'
 
 type TProps = {
   clickable?: boolean
   data: Pokemon
   showDetails?: boolean
-  showSimilar?: boolean
   showFavorite?: boolean
+  showSimilar?: boolean
+  showSound?: boolean
 }
 
 export const PokemonTile: React.FC<TProps> = ({
   data,
   clickable,
   showDetails = false,
+  showFavorite = true,
   showSimilar = false,
-  showFavorite,
+  showSound = false,
 }) => {
   const Container = clickable ? () => <ClickableTile id={data.id} href={`/${data.name}`} /> : Tile
   return (
@@ -39,6 +42,7 @@ export const PokemonTile: React.FC<TProps> = ({
       )}
       {showSimilar && <PokemonEvolutions data={data.evolutions} />}
       {showFavorite && <ToggleFavorite isFavorite={data.isFavorite} id={data.id} />}
+      {showSound && <PlaySound url={data.sound} />}
     </Container>
   )
 }
