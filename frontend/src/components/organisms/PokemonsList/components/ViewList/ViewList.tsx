@@ -1,7 +1,7 @@
 'use client'
 
 import { Pokemon } from '@/types/pokemons'
-import { Column, Grid, SkeletonPlaceholder } from '@carbon/react'
+import { ClickableTile, Column, Grid, SkeletonPlaceholder } from '@carbon/react'
 import { PokemonTile } from '../PokemonTile/PokemonTile'
 
 type TProps = {
@@ -13,7 +13,9 @@ export const ViewList: React.FC<TProps> = ({ data }) => {
     <Grid fullWidth>
       {data.map((pokemon) => (
         <Column key={pokemon.id} lg={4}>
-          <PokemonTile key={pokemon.id} data={pokemon} />
+          <ClickableTile id={pokemon.id} href={`/${pokemon.name}`}>
+            <PokemonTile key={pokemon.id} data={pokemon} />
+          </ClickableTile>
         </Column>
       ))}
     </Grid>
