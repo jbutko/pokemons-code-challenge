@@ -29,11 +29,35 @@ export const GET_POKEMON_BY_ID = gql`
   }
 `
 
-export const GET_POKEMON_BY_NAME: TypedDocumentNode<Pick<Pokemon, 'id' | 'name'>> = gql`
+export const GET_POKEMON_BY_NAME: TypedDocumentNode<{ pokemonByName: Pokemon }> = gql`
   query GetPokemonByName($name: String!) {
     pokemonByName(name: $name) {
       id
       name
+      image
+      types
+      weight {
+        minimum
+        maximum
+      }
+      height {
+        minimum
+        maximum
+      }
+      isFavorite
+      evolutions {
+        id
+        name
+        image
+      }
+      maxCP
+      maxHP
+      types
+      evolutions {
+        name
+        id
+        image
+      }
     }
   }
 `
