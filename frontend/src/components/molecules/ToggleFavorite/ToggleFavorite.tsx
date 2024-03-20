@@ -3,6 +3,7 @@ import { Star, StarFilled } from '@carbon/icons-react'
 import { useMutation } from '@apollo/client'
 import { FAVORITE_POKEMON, UNFAVORITE_POKEMON } from '@/core/apollo/queries'
 import { reloadListData } from './actions'
+import { useNotification } from '@/hooks/useNotification'
 
 type TProps = {
   id: string
@@ -12,13 +13,16 @@ type TProps = {
 export const ToggleFavorite: React.FC<TProps> = ({ isFavorite, id }) => {
   const [favoritePokemon] = useMutation(FAVORITE_POKEMON)
   const [unFavoritePokemon] = useMutation(UNFAVORITE_POKEMON)
+  const { notifyInfo } = useNotification()
 
   const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     if (isFavorite) {
       unFavoritePokemon({ variables: { id } })
+      notifyInfo('Pokemon removed from favorites')
     } else {
       favoritePokemon({ variables: { id } })
+      notifyInfo('Pokemon added to favorites')
     }
 
     reloadListData()

@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import { ApolloWrapper } from '@/core/apollo/ApolloWrapper'
 import { TPropsWithChildren } from '@/types/common.types'
 import { PageLayout } from '@/components/layouts/PageLayout/PageLayout'
+import { NotificationProvider } from '@/components/providers/NotificationProvider/NotificationProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,9 +18,11 @@ const RootLayout: TPropsWithChildren = ({ children }) => (
   <html lang="en">
     <body className={inter.className}>
       <ApolloWrapper>
-        <PageLayout condensed fullWidth>
-          {children}
-        </PageLayout>
+        <NotificationProvider>
+          <PageLayout condensed fullWidth>
+            {children}
+          </PageLayout>
+        </NotificationProvider>
       </ApolloWrapper>
     </body>
   </html>
