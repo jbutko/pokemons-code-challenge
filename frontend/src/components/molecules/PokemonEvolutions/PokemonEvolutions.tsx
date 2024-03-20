@@ -1,5 +1,5 @@
 import { Column, Grid } from '@carbon/react'
-import { PokemonTile } from '@/components/organisms/PokemonsList/components/PokemonTile/PokemonTile'
+import { PokemonTile } from '@/components/molecules/PokemonTile/PokemonTile'
 import { Pokemon } from '@/types/pokemons'
 import { Title } from '@/components/molecules/Title/Title'
 

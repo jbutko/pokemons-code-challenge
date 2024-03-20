@@ -2,7 +2,7 @@
 
 import { Pokemon } from '@/types/pokemons'
 import { ClickableTile, Column, Grid, SkeletonPlaceholder } from '@carbon/react'
-import { PokemonTile } from '../PokemonTile/PokemonTile'
+import { PokemonTile } from '@/components/molecules/PokemonTile/PokemonTile'
 
 type TProps = {
   data: Pokemon[]
