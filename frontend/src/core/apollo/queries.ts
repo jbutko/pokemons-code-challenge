@@ -16,6 +16,23 @@ export const GET_POKEMONS: TypedDocumentNode<{
         isFavorite
         types
         sound
+        weight {
+          minimum
+          maximum
+        }
+        height {
+          minimum
+          maximum
+        }
+        isFavorite
+        maxCP
+        maxHP
+        evolutions {
+          name
+          id
+          image
+        }
+        sound
       }
     }
   }
@@ -46,14 +63,8 @@ export const GET_POKEMON_BY_NAME: TypedDocumentNode<{ pokemonByName: Pokemon }> 
         maximum
       }
       isFavorite
-      evolutions {
-        id
-        name
-        image
-      }
       maxCP
       maxHP
-      types
       evolutions {
         name
         id
