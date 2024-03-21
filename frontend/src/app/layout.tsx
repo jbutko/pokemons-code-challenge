@@ -19,9 +19,7 @@ const RootLayout: TPropsWithChildren = ({ children }) => (
     <body className={inter.className}>
       <ApolloWrapper>
         <NotificationProvider>
-          <PageLayout condensed fullWidth>
-            {children}
-          </PageLayout>
+          <PageLayout>{children}</PageLayout>
         </NotificationProvider>
       </ApolloWrapper>
     </body>

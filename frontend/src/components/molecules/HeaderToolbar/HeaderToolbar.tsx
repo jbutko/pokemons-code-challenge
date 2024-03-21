@@ -21,8 +21,8 @@ export const HeaderToolbar: React.FC = () => {
   }
 
   return (
-    <Grid fullWidth>
-      <Column lg={7}>
+    <Grid narrow>
+      <Column sm={4} lg={7}>
         <Search
           closeButtonLabelText="Clear search input"
           defaultValue={searchParams.search || ''}
@@ -33,12 +33,10 @@ export const HeaderToolbar: React.FC = () => {
           size="lg"
         />
       </Column>
-      <Column lg={7}>
+      <Column sm={4} lg={7}>
         <PokemonTypes />
       </Column>
-      <Column lg={2}>
-        <ListSwitcher />
-      </Column>
+      <ListSwitcher />
     </Grid>
   )
 }

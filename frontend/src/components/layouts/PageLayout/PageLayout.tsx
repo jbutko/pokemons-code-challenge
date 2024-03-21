@@ -1,11 +1,15 @@
 'use client'
 
 import { TPropsWithChildren } from '@/types/common.types'
-import { Column, Grid } from '@carbon/react'
+import { Column, Grid, GridSettings } from '@carbon/react'
 import { GridProps } from '@carbon/react/lib/components/Grid/GridTypes'
 
 export const PageLayout: TPropsWithChildren<GridProps<React.ElementType>> = ({ children, ...gridProps }) => (
-  <Grid fullWidth {...gridProps}>
-    <Column lg={16}>{children}</Column>
+  <Grid condensed {...gridProps}>
+    <GridSettings mode="css-grid">
+      <Column sm={16} md={16} lg={16}>
+        {children}
+      </Column>
+    </GridSettings>
   </Grid>
 )

@@ -1,0 +1,6 @@
+@use "@carbon/styles/scss/spacing" as *;
+
+.container {
+  row-gap: $spacing-04;
+  margin: $spacing-04 0;
+}

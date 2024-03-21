@@ -12,7 +12,7 @@ type TProps = {
 }
 
 export const PokemonRow: React.FC<TProps> = ({ data }) => (
-  <FlexGrid>
+  <FlexGrid condensed>
     <Row>
       <Column lg={2}>
         <Image src={data.image} alt={data.name} width={100} height={100} priority />
