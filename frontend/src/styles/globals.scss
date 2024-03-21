@@ -1,4 +1,6 @@
-@use '@carbon/react';
+@use '@carbon/styles';
+@use '@carbon/styles/scss/grid';
+@use '@carbon/styles/scss/grid/flexbox';
 
 * {
   box-sizing: border-box;

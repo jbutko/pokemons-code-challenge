@@ -3,9 +3,9 @@
 import { useRef, useState } from 'react'
 import { Button, ClickableTile, Column, Grid } from '@carbon/react'
 import { Pokemon } from '@/types/pokemons'
-import { PokemonTile } from '@/components/molecules/PokemonTile/PokemonTile'
-import { Modal } from '@/components/molecules/Modal/Modal'
 import { TNullable } from '@/types/common.types'
+import { PokemonModal } from '../PokemonModal/PokemonModal'
+import { PokemonTile } from '@/components/molecules/PokemonTile/PokemonTile'
 
 type TProps = {
   data: Pokemon[]
@@ -21,28 +21,7 @@ export const ViewGrid: React.FC<TProps> = ({ data }) => {
 
   return (
     <>
-      <Modal
-        aria-label="Pokemon details"
-        id="pokemon-details"
-        headerProps={{
-          title: 'Pokemon details',
-        }}
-        launcherButtonRef={button}
-        onClose={handleClose}
-        onSubmit={handleClose}
-        open={!!activePokemon}
-      >
-        {!!activePokemon && (
-          <PokemonTile
-            data={activePokemon}
-            key={activePokemon.id}
-            showDetails
-            showFavorite={false}
-            showSimilar
-            showSound
-          />
-        )}
-      </Modal>
+      <PokemonModal data={activePokemon} onClose={handleClose} launcherButtonRef={button} />
       <Grid fullWidth>
         {data.map((pokemon) => (
           <Column key={pokemon.id} lg={4}>

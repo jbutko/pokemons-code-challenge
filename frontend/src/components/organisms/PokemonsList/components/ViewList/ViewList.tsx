@@ -3,9 +3,10 @@
 import { useRef, useState } from 'react'
 import { Button, ClickableTile, Column, Grid } from '@carbon/react'
 import { Pokemon } from '@/types/pokemons'
-import { PokemonTile } from '@/components/molecules/PokemonTile/PokemonTile'
-import { Modal } from '@/components/molecules/Modal/Modal'
+import { PokemonRow } from '@/components/molecules/PokemonRow/PokemonRow'
 import { TNullable } from '@/types/common.types'
+import { PokemonModal } from '../PokemonModal/PokemonModal'
+import styles from './view-list.module.scss'
 
 type TProps = {
   data: Pokemon[]
@@ -21,33 +22,12 @@ export const ViewList: React.FC<TProps> = ({ data }) => {
 
   return (
     <>
-      <Modal
-        aria-label="Pokemon details"
-        id="pokemon-details"
-        headerProps={{
-          title: 'Pokemon details',
-        }}
-        launcherButtonRef={button}
-        onClose={handleClose}
-        onSubmit={handleClose}
-        open={!!activePokemon}
-      >
-        {!!activePokemon && (
-          <PokemonTile
-            data={activePokemon}
-            key={activePokemon.id}
-            showDetails
-            showFavorite={false}
-            showSimilar
-            showSound
-          />
-        )}
-      </Modal>
+      <PokemonModal data={activePokemon} onClose={handleClose} launcherButtonRef={button} />
       <Grid fullWidth>
         {data.map((pokemon) => (
-          <Column key={pokemon.id} lg={4}>
-            <ClickableTile id={pokemon.id} href={`/${pokemon.name}`}>
-              <PokemonTile key={pokemon.id} data={pokemon} />
+          <Column key={pokemon.id} lg={16}>
+            <ClickableTile id={pokemon.id} href={`/${pokemon.name}`} className={styles.tileContainer}>
+              <PokemonRow key={pokemon.id} data={pokemon} />
             </ClickableTile>
             <Button onClick={() => handleClick(pokemon)} type="button">
               Show detail
