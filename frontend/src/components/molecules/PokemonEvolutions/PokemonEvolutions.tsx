@@ -15,7 +15,7 @@ export const PokemonEvolutions: React.FC<TProps> = ({ data }) => {
       </Column>
       {data.map((evolution) => (
         <Column lg={2} key={evolution.id}>
-          <PokemonTile data={evolution} clickable={false} showFavorite={false} />
+          <PokemonTile data={evolution} showFavorite={false} />
         </Column>
       ))}
     </Grid>
