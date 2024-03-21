@@ -1,0 +1,18 @@
+@use "@carbon/styles/scss/spacing" as *;
+@use "@carbon/styles/scss/colors" as *;
+@import '@carbon/styles/scss/utilities/box-shadow';
+
+.container {
+  row-gap: $spacing-04;
+  column-gap: $spacing-04;
+  position: relative;
+}
+
+.tile {
+  padding: 0;
+  cursor: pointer;
+
+  &:hover {
+    @include box-shadow;
+  }
+}

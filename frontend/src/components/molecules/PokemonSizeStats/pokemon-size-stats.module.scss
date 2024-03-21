@@ -1,7 +1,7 @@
-@use '@carbon/colors';
+@use '@carbon/colors' as *;
 
 .tileContainer {
-  border: 1px solid colors.$cool-gray-30;
+  border: 1px solid $cool-gray-30;
   margin: 0;
 }
 

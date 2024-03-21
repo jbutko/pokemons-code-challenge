@@ -29,15 +29,8 @@ export const ToggleFavorite: React.FC<TProps> = ({ isFavorite, id }) => {
   }
 
   return (
-    <div>
-      <IconButton
-        isSelected={isFavorite}
-        kind="ghost"
-        label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
-        onClick={handleToggle}
-      >
-        {isFavorite ? <StarFilled /> : <Star />}
-      </IconButton>
-    </div>
+    <IconButton kind="ghost" label={isFavorite ? 'Remove from favorites' : 'Add to favorites'} onClick={handleToggle}>
+      {isFavorite ? <StarFilled /> : <Star />}
+    </IconButton>
   )
 }

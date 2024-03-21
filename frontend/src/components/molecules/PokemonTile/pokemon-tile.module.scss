@@ -1,0 +1,43 @@
+@use '@carbon/colors' as *;
+@use '@carbon/layout' as *;
+@use '@carbon/react/scss/breakpoint' as breakpoint;
+
+.container {
+  padding: 0;
+  border: 1px solid $cool-gray-10;
+  position: relative;
+}
+
+.imageContainer {
+  width: 100%;
+  padding: $spacing-06 0;
+  display: flex;
+  justify-content: center;
+  background-color: $white-0;
+  margin: 0 auto;
+  position: relative;
+}
+
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  max-height: 200px;
+  max-width: 600px;
+  padding: $spacing-03;
+
+  @include breakpoint.breakpoint-down(lg) {
+    max-height: 350px;
+    max-width: 550px;
+  }
+}
+
+.containerInfo {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-02 $spacing-04;
+}
+
+.containerFavorite {
+  margin-right: 0;
+}

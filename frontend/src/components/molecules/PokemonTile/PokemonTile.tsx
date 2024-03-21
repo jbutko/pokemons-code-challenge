@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { Pokemon } from '@/types/pokemons'
-import { Tile } from '@carbon/react'
+import { Column, FlexGrid, Grid, Row, Stack, Tile } from '@carbon/react'
 import { Title } from '@/components/molecules/Title/Title'
 import { ToggleFavorite } from '@/components/molecules/ToggleFavorite/ToggleFavorite'
 import { PokemonTags } from '@/components/molecules/PokemonTags/PokemonTags'
@@ -10,6 +10,7 @@ import { PokemonPowerProfile } from '@/components/molecules/PokemonPowerProfile/
 import { PokemonSizeStats } from '@/components/molecules/PokemonSizeStats/PokemonSizeStats'
 import { PokemonEvolutions } from '@/components/molecules/PokemonEvolutions/PokemonEvolutions'
 import { PlaySound } from '@/components/molecules/PlaySound/PlaySound'
+import styles from './pokemon-tile.module.scss'
 
 type TProps = {
   data: Pokemon
@@ -26,10 +27,22 @@ export const PokemonTile: React.FC<TProps> = ({
   showSimilar = false,
   showSound = false,
 }) => (
-  <Tile>
-    <Image src={data.image} alt={data.name} width={100} height={100} priority />
-    <Title level={4}>{data.name}</Title>
-    {data.types && <PokemonTags tags={data.types} />}
+  <Tile className={styles.container}>
+    <div className={styles.imageContainer}>
+      <Image src={data.image} alt={data.name} fill priority className={styles.image} />
+    </div>
+    <Grid narrow fullWidth className={styles.containerInfo}>
+      <Column>
+        <Title level={4}>{data.name}</Title>
+        {data.types && <PokemonTags tags={data.types} />}
+      </Column>
+      {showFavorite && (
+        <Column className={styles.containerFavorite}>
+          <ToggleFavorite isFavorite={data.isFavorite} id={data.id} />
+        </Column>
+      )}
+    </Grid>
+
     {showDetails && (
       <>
         <PokemonPowerProfile maxCP={data.maxCP} maxHP={data.maxHP} />
@@ -37,7 +50,7 @@ export const PokemonTile: React.FC<TProps> = ({
       </>
     )}
     {showSimilar && <PokemonEvolutions data={data.evolutions} />}
-    {showFavorite && <ToggleFavorite isFavorite={data.isFavorite} id={data.id} />}
+
     {showSound && <PlaySound url={data.sound} />}
   </Tile>
 )
