@@ -1,0 +1,14 @@
+@use '@carbon/colors' as *;
+
+.container {
+  border: 1px solid $cool-gray-20;
+  align-items: center;
+}
+
+.image {
+  display: flex;
+}
+
+.icons {
+  justify-self: end;
+}

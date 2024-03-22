@@ -1,3 +1,10 @@
+@use "@carbon/styles/scss/spacing" as *;
+
 .tileContainer {
   padding: 0;
+  margin: 0;
+}
+
+.container {
+  row-gap: $spacing-04;
 }
