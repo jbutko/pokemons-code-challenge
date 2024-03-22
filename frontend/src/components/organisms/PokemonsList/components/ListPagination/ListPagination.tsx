@@ -2,6 +2,7 @@
 
 import { useUrlParams } from '@/hooks/useUrlParams'
 import { PaginationNav } from '@carbon/react'
+import styles from './list-pagination.module.scss'
 
 type TProps = {
   count: number
@@ -23,11 +24,14 @@ export const ListPagination: React.FC<TProps> = ({ limit, count }) => {
   }
 
   return (
-    <PaginationNav
-      itemsShown={limit}
-      onChange={(page) => handlePageChange(page)}
-      page={Number(PAGE)}
-      totalItems={TOTAL_PAGES}
-    />
+    <div className={styles.container}>
+      <PaginationNav
+        className={styles.pagination}
+        itemsShown={limit}
+        onChange={(page) => handlePageChange(page)}
+        page={Number(PAGE)}
+        totalItems={TOTAL_PAGES}
+      />
+    </div>
   )
 }
