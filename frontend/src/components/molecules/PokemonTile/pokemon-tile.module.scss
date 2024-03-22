@@ -35,9 +35,13 @@
 .containerInfo {
   display: flex;
   justify-content: space-between;
-  padding: $spacing-02 $spacing-04;
+  padding: $spacing-02 $spacing-05;
 }
 
 .containerFavorite {
   margin-right: 0;
+}
+
+.detailContainer {
+  margin-bottom: $spacing-04;
 }

@@ -34,6 +34,7 @@ export const PokemonTile: React.FC<TProps> = ({
     <div className={styles.imageContainer}>
       <Image src={data.image} alt={data.name} fill priority className={styles.image} />
     </div>
+
     <Grid narrow fullWidth className={styles.containerInfo}>
       <Column>
         <Title level={4}>{data.name}</Title>
@@ -48,10 +49,10 @@ export const PokemonTile: React.FC<TProps> = ({
     </Grid>
 
     {showDetails && (
-      <>
+      <div className={styles.detailContainer}>
         <PokemonPowerProfile maxCP={data.maxCP} maxHP={data.maxHP} />
         <PokemonSizeStats height={data.height} weight={data.weight} />
-      </>
+      </div>
     )}
     {showSimilar && <PokemonEvolutions data={data.evolutions} />}
     {showSound && <PlaySound url={data.sound} />}

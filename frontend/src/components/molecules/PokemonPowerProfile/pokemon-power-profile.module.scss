@@ -1,0 +1,6 @@
+@use '@carbon/layout' as *;
+
+.container {
+  row-gap: $spacing-02;
+  margin-bottom: $spacing-06;
+}
