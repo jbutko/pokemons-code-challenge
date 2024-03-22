@@ -16,9 +16,12 @@ export const ViewGrid: React.FC<TProps> = ({ data }) => {
   const button = useRef(null)
   const [activePokemon, setActivePokemon] = useState<TNullable<Pokemon>>(null)
 
-  const handleClick = (pokemon: Pokemon) => setActivePokemon(pokemon)
-
   const handleClose = () => setActivePokemon(null)
+
+  const handleShowModal = (e: React.MouseEvent<HTMLButtonElement>, pokemon: Pokemon) => {
+    e.preventDefault()
+    setActivePokemon(pokemon)
+  }
 
   return (
     <>
@@ -27,11 +30,8 @@ export const ViewGrid: React.FC<TProps> = ({ data }) => {
         {data.map((pokemon) => (
           <Column key={pokemon.id} lg={4}>
             <ClickableTile id={pokemon.id} href={`/${pokemon.name}`} className={styles.tile}>
-              <PokemonTile key={pokemon.id} data={pokemon} />
+              <PokemonTile key={pokemon.id} data={pokemon} onShowModal={(e) => handleShowModal(e, pokemon)} />
             </ClickableTile>
-            <Button onClick={() => handleClick(pokemon)} type="button">
-              Show detail
-            </Button>
           </Column>
         ))}
       </Grid>
