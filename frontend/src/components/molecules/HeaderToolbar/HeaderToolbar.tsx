@@ -36,7 +36,9 @@ export const HeaderToolbar: React.FC = () => {
       <Column sm={4} lg={7}>
         <PokemonTypes />
       </Column>
-      <ListSwitcher />
+      <Column sm={4} lg={2}>
+        <ListSwitcher />
+      </Column>
     </Grid>
   )
 }
