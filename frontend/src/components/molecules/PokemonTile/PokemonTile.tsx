@@ -1,8 +1,7 @@
 'use client'
 
-import Image from 'next/image'
-import { Pokemon } from '@/types/pokemons'
 import { Column, Grid, Tile } from '@carbon/react'
+import type { ImageProps } from 'next/image'
 import { Title } from '@/components/molecules/Title/Title'
 import { ToggleFavorite } from '@/components/molecules/ToggleFavorite/ToggleFavorite'
 import { PokemonTags } from '@/components/molecules/PokemonTags/PokemonTags'
@@ -11,6 +10,8 @@ import { PokemonSizeStats } from '@/components/molecules/PokemonSizeStats/Pokemo
 import { PokemonEvolutions } from '@/components/molecules/PokemonEvolutions/PokemonEvolutions'
 import { PlaySound } from '@/components/molecules/PlaySound/PlaySound'
 import { ButtonModal } from '@/components/molecules/ButtonModal/ButtonModal'
+import { Image } from '@/components/atoms/Image/Image'
+import { Pokemon } from '@/types/pokemons'
 import styles from './pokemon-tile.module.scss'
 
 type TProps = {
@@ -19,6 +20,7 @@ type TProps = {
   showFavorite?: boolean
   showSimilar?: boolean
   showSound?: boolean
+  imgHeight?: ImageProps['height']
   onShowModal?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
@@ -28,11 +30,12 @@ export const PokemonTile: React.FC<TProps> = ({
   showFavorite = true,
   showSimilar = false,
   showSound = false,
+  imgHeight = 200,
   onShowModal,
 }) => (
   <Tile className={styles.container}>
     <div className={styles.imageContainer}>
-      <Image src={data.image} alt={data.name} fill priority className={styles.image} />
+      <Image src={data.image} alt={data.name} fill priority className={styles.image} height={imgHeight} />
     </div>
 
     <Grid narrow fullWidth className={styles.containerInfo}>
@@ -54,7 +57,7 @@ export const PokemonTile: React.FC<TProps> = ({
         <PokemonSizeStats height={data.height} weight={data.weight} />
       </div>
     )}
-    {showSimilar && <PokemonEvolutions data={data.evolutions} />}
+    {showSimilar && !!data.evolutions.length && <PokemonEvolutions data={data.evolutions} />}
     {showSound && <PlaySound url={data.sound} />}
   </Tile>
 )
