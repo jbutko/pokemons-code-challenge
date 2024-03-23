@@ -1,0 +1,10 @@
+@use '@carbon/layout' as *;
+
+.container {
+  margin: $spacing-04 0 $spacing-08 0;
+  column-gap: $spacing-04;
+}
+
+.title {
+  margin: $spacing-04 0;
+}
