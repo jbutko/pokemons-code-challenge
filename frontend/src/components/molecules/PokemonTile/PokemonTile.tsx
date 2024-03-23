@@ -43,10 +43,11 @@ export const PokemonTile: React.FC<TProps> = ({
         <Title level={4}>{data.name}</Title>
         {data.types && <PokemonTags tags={data.types} />}
       </Column>
-      {(showFavorite || onShowModal) && (
+      {(showFavorite || onShowModal || showSound) && (
         <Column className={styles.containerFavorite}>
           <ToggleFavorite isFavorite={data.isFavorite} id={data.id} />
           {onShowModal && <ButtonModal onClick={onShowModal} />}
+          {showSound && <PlaySound url={data.sound} />}
         </Column>
       )}
     </Grid>
@@ -58,6 +59,5 @@ export const PokemonTile: React.FC<TProps> = ({
       </div>
     )}
     {showSimilar && !!data.evolutions.length && <PokemonEvolutions data={data.evolutions} />}
-    {showSound && <PlaySound url={data.sound} />}
   </Tile>
 )

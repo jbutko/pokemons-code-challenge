@@ -1,6 +1,6 @@
 'use client'
 
-import { PauseOutlineFilled, PlayFilledAlt } from '@carbon/icons-react'
+import { PauseOutline, Play } from '@carbon/icons-react'
 import { IconButton } from '@carbon/react'
 import { useEffect, useState } from 'react'
 
@@ -40,7 +40,7 @@ export const PlaySound: React.FC<TProps> = ({ url }) => {
 
   return (
     <IconButton isSelected={isPlaying} kind="ghost" label={isPlaying ? 'Stop' : 'Play'} onClick={handleClick}>
-      {isPlaying ? <PauseOutlineFilled /> : <PlayFilledAlt />}
+      {isPlaying ? <PauseOutline /> : <Play />}
     </IconButton>
   )
 }
