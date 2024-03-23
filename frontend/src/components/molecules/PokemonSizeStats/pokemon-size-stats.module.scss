@@ -1,10 +1,19 @@
 @use '@carbon/colors' as *;
 
 .tileContainer {
-  border: 1px solid $cool-gray-20;
   margin: 0;
+  border: 1px solid $cool-gray-20;
+
+  &:last-child {
+    border-left: none;
+  }
 }
 
 .tile {
   line-height: 2;
+  text-align: center;
+}
+
+.tile:not(:last-child) {
+  border-left: none;
 }
