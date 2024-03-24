@@ -1,0 +1,14 @@
+@use '@carbon/grid' as *;
+
+.container {
+  @include breakpoint-down('md', $breakpoints: $grid-breakpoints) {
+    row-gap: 1rem;
+    column-gap: 1rem;
+  }
+}
+
+.listSwitcher {
+  @include breakpoint-down('md', $breakpoints: $grid-breakpoints) {
+    text-align: center;
+  }
+}

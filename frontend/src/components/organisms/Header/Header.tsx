@@ -7,10 +7,10 @@ import styles from './header.module.scss'
 
 export const Header: React.FC = () => (
   <Grid narrow fullWidth className={styles.container}>
-    <Column sm={8} md={8} lg={16}>
+    <Column sm={4} md={8} lg={16}>
       <ViewsTab />
     </Column>
-    <Column sm={8} md={8} lg={16}>
+    <Column sm={4} md={8} lg={16}>
       <HeaderToolbar />
     </Column>
   </Grid>

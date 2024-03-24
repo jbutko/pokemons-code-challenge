@@ -5,10 +5,13 @@ import { PokemonTypes } from '@/components/molecules/PokemonTypes/PokemonTypes'
 import { ListSwitcher } from '@/components/molecules/ListSwitcher/ListSwitcher'
 import { useTransition } from 'react'
 import { useUrlParams } from '@/hooks/useUrlParams'
+import { useBreakpoints } from '@/hooks/useBreakpoint'
+import styles from './header-toolbar.module.scss'
 
 export const HeaderToolbar: React.FC = () => {
   let [, startTransition] = useTransition()
   const { setUrlParams, searchParams } = useUrlParams()
+  const { isLg, isMd, isSm } = useBreakpoints()
 
   const handleSearch = (e: { target: HTMLInputElement; type: 'change' }) => {
     startTransition(() => {
@@ -21,7 +24,7 @@ export const HeaderToolbar: React.FC = () => {
   }
 
   return (
-    <Grid narrow>
+    <Grid narrow={isLg} condensed={isSm || isMd} fullWidth className={styles.container}>
       <Column sm={4} lg={7}>
         <Search
           closeButtonLabelText="Clear search input"
@@ -33,10 +36,10 @@ export const HeaderToolbar: React.FC = () => {
           size="lg"
         />
       </Column>
-      <Column sm={4} lg={7}>
+      <Column sm={4} md={8} lg={7}>
         <PokemonTypes />
       </Column>
-      <Column sm={4} lg={2}>
+      <Column sm={4} md={8} lg={2} className={styles.listSwitcher}>
         <ListSwitcher />
       </Column>
     </Grid>
