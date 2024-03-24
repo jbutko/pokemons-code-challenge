@@ -1,6 +1,6 @@
 import { Pokemon } from '@/types/pokemons'
 import { Column, Grid, Tile } from '@carbon/react'
-import { Title } from '@/components/molecules/Title/Title'
+import { Title } from '@/components/atoms/Title/Title'
 import styles from './pokemon-size-stats.module.scss'
 
 type TProps = {

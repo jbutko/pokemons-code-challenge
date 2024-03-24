@@ -2,8 +2,8 @@
 
 import Image from 'next/image'
 import { Pokemon } from '@/types/pokemons'
-import { Column, FlexGrid, Grid, Row, Stack } from '@carbon/react'
-import { Title } from '@/components/molecules/Title/Title'
+import { Column, Grid } from '@carbon/react'
+import { Title } from '@/components/atoms/Title/Title'
 import { ToggleFavorite } from '@/components/molecules/ToggleFavorite/ToggleFavorite'
 import { PokemonTags } from '@/components/molecules/PokemonTags/PokemonTags'
 import { ButtonModal } from '@/components/molecules/ButtonModal/ButtonModal'

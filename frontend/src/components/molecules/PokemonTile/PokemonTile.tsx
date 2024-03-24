@@ -2,7 +2,7 @@
 
 import { Column, Grid, Tile } from '@carbon/react'
 import type { ImageProps } from 'next/image'
-import { Title } from '@/components/molecules/Title/Title'
+import { Title } from '@/components/atoms/Title/Title'
 import { ToggleFavorite } from '@/components/molecules/ToggleFavorite/ToggleFavorite'
 import { PokemonTags } from '@/components/molecules/PokemonTags/PokemonTags'
 import { PokemonPowerProfile } from '@/components/molecules/PokemonPowerProfile/PokemonPowerProfile'
