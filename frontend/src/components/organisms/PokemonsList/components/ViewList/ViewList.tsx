@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { Button, ClickableTile, Column, Grid } from '@carbon/react'
+import { ClickableTile, Column, Grid } from '@carbon/react'
 import { Pokemon } from '@/types/pokemons'
 import { PokemonRow } from '@/components/molecules/PokemonRow/PokemonRow'
 import { TNullable } from '@/types/common.types'

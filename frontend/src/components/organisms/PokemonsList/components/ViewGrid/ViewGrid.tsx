@@ -1,11 +1,11 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { Button, ClickableTile, Column, Grid } from '@carbon/react'
-import { Pokemon } from '@/types/pokemons'
-import { TNullable } from '@/types/common.types'
-import { PokemonModal } from '../PokemonModal/PokemonModal'
 import { PokemonTile } from '@/components/molecules/PokemonTile/PokemonTile'
+import { TNullable } from '@/types/common.types'
+import { Pokemon } from '@/types/pokemons'
+import { ClickableTile, Column, Grid } from '@carbon/react'
+import { useRef, useState } from 'react'
+import { PokemonModal } from '../PokemonModal/PokemonModal'
 import styles from './view-grid.module.scss'
 
 type TProps = {
