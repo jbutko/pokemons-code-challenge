@@ -1,0 +1,13 @@
+@use '@carbon/grid' as *;
+
+.goBackContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+
+  @include breakpoint-up('md', $breakpoints: $grid-breakpoints) {
+    top: 40px;
+    right: 40px;
+  }
+}
