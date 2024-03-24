@@ -28,7 +28,7 @@ export const ViewGrid: React.FC<TProps> = ({ data }) => {
       <PokemonModal data={activePokemon} onClose={handleClose} launcherButtonRef={button} />
       <Grid narrow fullWidth className={styles.container}>
         {data.map((pokemon) => (
-          <Column key={pokemon.id} lg={4}>
+          <Column key={pokemon.id} sm={4} lg={4}>
             <ClickableTile id={pokemon.id} href={`/${pokemon.name}`} className={styles.tile}>
               <PokemonTile key={pokemon.id} data={pokemon} onShowModal={(e) => handleShowModal(e, pokemon)} />
             </ClickableTile>

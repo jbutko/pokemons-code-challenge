@@ -24,7 +24,7 @@ export const HeaderToolbar: React.FC = () => {
   }
 
   return (
-    <Grid narrow={isLg} condensed={isSm || isMd} fullWidth className={styles.container}>
+    <Grid condensed className={styles.container}>
       <Column sm={4} lg={7}>
         <Search
           closeButtonLabelText="Clear search input"

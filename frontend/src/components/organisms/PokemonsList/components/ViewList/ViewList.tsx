@@ -28,7 +28,7 @@ export const ViewList: React.FC<TProps> = ({ data }) => {
       <PokemonModal data={activePokemon} onClose={handleClose} launcherButtonRef={button} />
       <Grid narrow fullWidth className={styles.container}>
         {data.map((pokemon) => (
-          <Column key={pokemon.id} md={16} lg={16}>
+          <Column key={pokemon.id} sm={4} md={16} lg={16}>
             <ClickableTile id={pokemon.id} href={`/${pokemon.name}`} className={styles.tileContainer}>
               <PokemonRow key={pokemon.id} data={pokemon} onShowModal={(e) => handleShowModal(e, pokemon)} />
             </ClickableTile>

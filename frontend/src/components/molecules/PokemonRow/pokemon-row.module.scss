@@ -1,8 +1,14 @@
 @use '@carbon/colors' as *;
+@use '@carbon/grid' as *;
 
 .container {
   border: 1px solid $cool-gray-20;
   align-items: center;
+
+  @include breakpoint-down('md', $breakpoints: $grid-breakpoints) {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .image {
@@ -11,4 +17,10 @@
 
 .icons {
   justify-self: end;
+
+  @include breakpoint-down('md', $breakpoints: $grid-breakpoints) {
+    margin-right: 0;
+    position: absolute;
+    right: 0
+  }
 }

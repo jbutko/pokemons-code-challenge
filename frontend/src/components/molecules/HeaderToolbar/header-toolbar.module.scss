@@ -3,11 +3,16 @@
 .container {
   @include breakpoint-down('md', $breakpoints: $grid-breakpoints) {
     row-gap: 1rem;
+  }
+
+  @include breakpoint-up('md', $breakpoints: $grid-breakpoints) {
     column-gap: 1rem;
   }
 }
 
 .listSwitcher {
+  text-align: right;
+
   @include breakpoint-down('md', $breakpoints: $grid-breakpoints) {
     text-align: center;
   }
