@@ -3,6 +3,15 @@
 .container {
   margin: $spacing-04 0 $spacing-08 0;
   column-gap: $spacing-04;
+  padding: 0 $spacing-05;
+}
+
+.titleContainer {
+  margin-bottom: $spacing-06;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .title {

@@ -1,4 +1,14 @@
 @use '@carbon/colors' as *;
+@use '@carbon/layout' as *;
+@use '@carbon/grid' as *;
+
+.container {
+  padding: 0 $spacing-04;
+
+  @include breakpoint-up('md') {
+    padding: 0 $spacing-05;
+  }
+}
 
 .tileContainer {
   margin: 0;

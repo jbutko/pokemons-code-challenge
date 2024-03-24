@@ -8,11 +8,11 @@ type TProps = {
 }
 
 export const PokemonPowerProfile: React.FC<TProps> = ({ maxCP, maxHP }) => (
-  <Grid lg={16} className={styles.container}>
-    <Column lg={16}>
+  <Grid className={styles.container}>
+    <Column sm={4} md={8} lg={16}>
       <PowerItem value={maxCP} status="active" label="CP" />
     </Column>
-    <Column lg={16}>
+    <Column sm={4} md={8} lg={16}>
       <PowerItem value={maxHP} status="finished" label="HP" />
     </Column>
   </Grid>

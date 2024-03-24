@@ -35,7 +35,11 @@
 .containerInfo {
   display: flex;
   justify-content: space-between;
-  padding: $spacing-02 $spacing-05;
+  padding: $spacing-02 $spacing-04;
+
+  @include breakpoint-up('md') {
+    padding: $spacing-02 $spacing-05;
+  }
 }
 
 .containerFavorite {

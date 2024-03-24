@@ -53,10 +53,10 @@ export const PokemonTile: React.FC<TProps> = ({
     </Grid>
 
     {showDetails && (
-      <div className={styles.detailContainer}>
+      <Column sm={4} lg={16} className={styles.detailContainer}>
         <PokemonPowerProfile maxCP={data.maxCP} maxHP={data.maxHP} />
         <PokemonSizeStats height={data.height} weight={data.weight} />
-      </div>
+      </Column>
     )}
     {showSimilar && !!data.evolutions.length && <PokemonEvolutions data={data.evolutions} />}
   </Tile>

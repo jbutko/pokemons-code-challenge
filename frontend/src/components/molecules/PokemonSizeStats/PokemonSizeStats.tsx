@@ -9,14 +9,14 @@ type TProps = {
 }
 
 export const PokemonSizeStats: React.FC<TProps> = ({ height, weight }) => (
-  <Grid lg="100%" condensed>
-    <Column lg="50%" md="50%" max="50%" className={styles.tileContainer}>
+  <Grid condensed className={styles.container}>
+    <Column lg={8} md={4} sm={2} className={styles.tileContainer}>
       <Tile key="weight" className={styles.tile}>
         <Title level={5}>Weight</Title>
         {weight.minimum} - {weight.maximum}
       </Tile>
     </Column>
-    <Column lg="50%" md="50%" max="50%" className={styles.tileContainer}>
+    <Column lg={8} md={4} sm={2} className={styles.tileContainer}>
       <Tile key="height" className={styles.tile}>
         <Title level={5}>Height</Title>
         {height.minimum} - {height.maximum}
