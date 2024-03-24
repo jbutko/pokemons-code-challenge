@@ -1,6 +1,6 @@
 @use '@carbon/colors' as *;
 @use '@carbon/layout' as *;
-@use '@carbon/react/scss/breakpoint' as breakpoint;
+@use '@carbon/react/scss/breakpoint' as *;
 
 .container {
   padding: 0;
@@ -26,7 +26,7 @@
   max-width: 600px;
   padding: $spacing-03;
 
-  @include breakpoint.breakpoint-down(lg) {
+  @include breakpoint-down('lg') {
     max-height: 350px;
     max-width: 550px;
   }
@@ -35,7 +35,7 @@
 .containerInfo {
   display: flex;
   justify-content: space-between;
-  padding: $spacing-02 $spacing-04;
+  padding: $spacing-02 0;
 
   @include breakpoint-up('md') {
     padding: $spacing-02 $spacing-05;
