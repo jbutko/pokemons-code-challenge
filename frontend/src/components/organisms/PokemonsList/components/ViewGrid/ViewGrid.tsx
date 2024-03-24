@@ -20,6 +20,7 @@ export const ViewGrid: React.FC<TProps> = ({ data }) => {
 
   const handleShowModal = (e: React.MouseEvent<HTMLButtonElement>, pokemon: Pokemon) => {
     e.preventDefault()
+    e.stopPropagation()
     setActivePokemon(pokemon)
   }
 
