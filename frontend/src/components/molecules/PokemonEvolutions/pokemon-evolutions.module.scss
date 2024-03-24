@@ -1,4 +1,5 @@
 @use '@carbon/layout' as *;
+@import '@carbon/styles/scss/utilities/box-shadow';
 
 .container {
   margin: $spacing-04 0 $spacing-08 0;
@@ -16,4 +17,12 @@
 
 .title {
   margin: $spacing-04 0;
+}
+
+.tile {
+  padding: 0;
+
+  &:hover {
+    @include box-shadow;
+  }
 }
