@@ -5,7 +5,7 @@
   border: 1px solid $cool-gray-20;
   align-items: center;
 
-  @include breakpoint-down('md', $breakpoints: $grid-breakpoints) {
+  @include breakpoint-down('lg', $breakpoints: $grid-breakpoints) {
     display: flex;
     flex-direction: row;
   }
@@ -18,7 +18,7 @@
 .icons {
   justify-self: end;
 
-  @include breakpoint-down('md', $breakpoints: $grid-breakpoints) {
+  @include breakpoint-down('lg', $breakpoints: $grid-breakpoints) {
     margin-right: 0;
     position: absolute;
     right: 0

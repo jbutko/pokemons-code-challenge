@@ -16,14 +16,14 @@ type TProps = {
 
 export const PokemonRow: React.FC<TProps> = ({ data, onShowModal }) => (
   <Grid narrow className={styles.container}>
-    <Column lg={2}>
+    <Column md={1} lg={2}>
       <Image src={data.image} alt={data.name} width={100} height={100} priority className={styles.image} />
     </Column>
-    <Column lg={12}>
+    <Column md={2} lg={12}>
       <Title level={4}>{data.name}</Title>
       {data.types && <PokemonTags tags={data.types} />}
     </Column>
-    <Column lg={2} className={styles.icons}>
+    <Column md={1} lg={2} className={styles.icons}>
       <ToggleFavorite isFavorite={data.isFavorite} id={data.id} />
       {onShowModal && <ButtonModal onClick={onShowModal} />}
     </Column>

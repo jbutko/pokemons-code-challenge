@@ -30,7 +30,7 @@ export const PokemonTile: React.FC<TProps> = ({
   showFavorite = true,
   showSimilar = false,
   showSound = false,
-  imgHeight = 200,
+  imgHeight = 250,
   onShowModal,
 }) => (
   <Tile className={styles.container}>
