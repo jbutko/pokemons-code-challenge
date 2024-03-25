@@ -1,10 +1,10 @@
 import { Modal } from '@/components/molecules/Modal/Modal'
 import { PokemonTile } from '@/components/molecules/PokemonTile/PokemonTile'
 import { TNullable } from '@/types/common.types'
-import { Pokemon } from '@/types/pokemons'
+import { IPokemon } from '@/types/pokemons'
 
 type TProps = {
-  data?: TNullable<Pokemon>
+  data?: TNullable<IPokemon>
   onClose: () => void
   launcherButtonRef: React.RefObject<HTMLButtonElement>
 }

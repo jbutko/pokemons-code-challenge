@@ -1,8 +1,8 @@
 import { TypedDocumentNode, gql } from '@apollo/client'
-import { PokemonConnection, Pokemon } from '@/types/pokemons'
+import { IPokemonConnection, IPokemon } from '@/types/pokemons'
 
 export const GET_POKEMONS: TypedDocumentNode<{
-  pokemons: PokemonConnection
+  pokemons: IPokemonConnection
 }> = gql`
   query GetPokemons($query: PokemonsQueryInput!) {
     pokemons(query: $query) {
@@ -47,7 +47,7 @@ export const GET_POKEMON_BY_ID = gql`
   }
 `
 
-export const GET_POKEMON_BY_NAME: TypedDocumentNode<{ pokemonByName: Pokemon }> = gql`
+export const GET_POKEMON_BY_NAME: TypedDocumentNode<{ pokemonByName: IPokemon }> = gql`
   query GetPokemonByName($name: String!) {
     pokemonByName(name: $name) {
       id

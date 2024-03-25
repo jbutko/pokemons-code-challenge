@@ -1,11 +1,11 @@
 import { ClickableTile, Column, Grid } from '@carbon/react'
 import { PokemonTile } from '@/components/molecules/PokemonTile/PokemonTile'
-import { Pokemon } from '@/types/pokemons'
+import { IPokemon } from '@/types/pokemons'
 import { Title } from '@/components/atoms/Title/Title'
 import styles from './pokemon-evolutions.module.scss'
 
 type TProps = {
-  data: Pokemon['evolutions']
+  data: IPokemon['evolutions']
 }
 
 export const PokemonEvolutions: React.FC<TProps> = ({ data }) => {

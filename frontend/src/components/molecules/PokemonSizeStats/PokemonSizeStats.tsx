@@ -1,11 +1,11 @@
-import { Pokemon } from '@/types/pokemons'
+import { IPokemon } from '@/types/pokemons'
 import { Column, Grid, Tile } from '@carbon/react'
 import { Title } from '@/components/atoms/Title/Title'
 import styles from './pokemon-size-stats.module.scss'
 
 type TProps = {
-  height: Pokemon['height']
-  weight: Pokemon['weight']
+  height: IPokemon['height']
+  weight: IPokemon['weight']
 }
 
 export const PokemonSizeStats: React.FC<TProps> = ({ height, weight }) => (

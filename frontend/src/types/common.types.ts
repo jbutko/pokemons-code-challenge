@@ -6,7 +6,7 @@ export type TObject<T = unknown> = Record<string, T>
 
 export type TNullable<T> = T | null
 
-export interface TRSCProps<SearchParams = TObject, Params = TObject> {
+export type TRSCProps<SearchParams = TObject, Params = TObject> = {
   params: Params
   searchParams: SearchParams
 }

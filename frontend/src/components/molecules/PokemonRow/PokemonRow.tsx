@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Pokemon } from '@/types/pokemons'
+import { IPokemon } from '@/types/pokemons'
 import { Column, Grid } from '@carbon/react'
 import { Title } from '@/components/atoms/Title/Title'
 import { ToggleFavorite } from '@/components/molecules/ToggleFavorite/ToggleFavorite'
@@ -10,7 +10,7 @@ import { ButtonModal } from '@/components/molecules/ButtonModal/ButtonModal'
 import styles from './pokemon-row.module.scss'
 
 type TProps = {
-  data: Pokemon
+  data: IPokemon
   onShowModal?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 

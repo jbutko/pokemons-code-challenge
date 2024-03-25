@@ -11,11 +11,11 @@ import { PokemonEvolutions } from '@/components/molecules/PokemonEvolutions/Poke
 import { PlaySound } from '@/components/molecules/PlaySound/PlaySound'
 import { ButtonModal } from '@/components/molecules/ButtonModal/ButtonModal'
 import { Image } from '@/components/atoms/Image/Image'
-import { Pokemon } from '@/types/pokemons'
+import { IPokemon } from '@/types/pokemons'
 import styles from './pokemon-tile.module.scss'
 
 type TProps = {
-  data: Pokemon
+  data: IPokemon
   showDetails?: boolean
   showFavorite?: boolean
   showSimilar?: boolean

@@ -2,14 +2,14 @@
 
 import { useRef, useState } from 'react'
 import { ClickableTile, Column, Grid } from '@carbon/react'
-import { Pokemon } from '@/types/pokemons'
+import { IPokemon } from '@/types/pokemons'
 import { PokemonRow } from '@/components/molecules/PokemonRow/PokemonRow'
 import { TNullable } from '@/types/common.types'
 import { PokemonModal } from '../PokemonModal/PokemonModal'
 import styles from './view-list.module.scss'
 
 type TProps = {
-  data: Pokemon[]
+  data: IPokemon[]
 }
 
 export const ViewList: React.FC<TProps> = ({ data }) => {
@@ -18,7 +18,7 @@ export const ViewList: React.FC<TProps> = ({ data }) => {
 
   const handleClose = () => setActivePokemonId(null)
 
-  const handleShowModal = (e: React.MouseEvent<HTMLButtonElement>, pokemon: Pokemon) => {
+  const handleShowModal = (e: React.MouseEvent<HTMLButtonElement>, pokemon: IPokemon) => {
     e.preventDefault()
     e.stopPropagation()
     setActivePokemonId(pokemon.id)

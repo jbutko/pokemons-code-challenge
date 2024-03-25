@@ -1,77 +1,77 @@
-export interface Attack {
+export interface IAttack {
   name: string
   type: string
   damage: number
 }
 
-export interface PokemonDimension {
+export interface IPokemonDimension {
   minimum: string
   maximum: string
 }
 
-export interface PokemonAttack {
-  fast: Attack[]
-  special: Attack[]
+export interface IPokemonAttack {
+  fast: IAttack[]
+  special: IAttack[]
 }
 
-export interface PokemonEvolutionRequirement {
+export interface IPokemonEvolutionRequirement {
   amount: number
   name: string
 }
 
-export interface Pokemon {
+export interface IPokemon {
   id: string
   number: number
   name: string
-  weight: PokemonDimension
-  height: PokemonDimension
+  weight: IPokemonDimension
+  height: IPokemonDimension
   classification: string
   types: string[]
   resistant: string[]
-  attacks: PokemonAttack
+  attacks: IPokemonAttack
   weaknesses: string[]
   fleeRate: number
   maxCP: number
-  evolutions: Pokemon[]
-  evolutionRequirements?: PokemonEvolutionRequirement
+  evolutions: IPokemon[]
+  evolutionRequirements?: IPokemonEvolutionRequirement
   maxHP: number
   image: string
   sound: string
   isFavorite: boolean
 }
 
-export interface PokemonConnection {
+export interface IPokemonConnection {
   limit: number
   offset: number
   count: number
-  edges: Pokemon[]
+  edges: IPokemon[]
 }
 
-export interface PokemonsQueryInput {
+export interface IPokemonsQueryInput {
   limit?: number
   offset?: number
   search?: string
-  filter?: PokemonFilterInput
+  filter?: IPokemonFilterInput
 }
 
-export interface PokemonFilterInput {
+export interface IPokemonFilterInput {
   type?: string
   isFavorite?: boolean
   name?: string
 }
 
-export interface Query {
-  pokemons(query: PokemonsQueryInput): PokemonConnection
-  pokemonByName(name: string): Pokemon | null
-  pokemonById(id: string): Pokemon | null
+export interface IQuery {
+  pokemons(query: IPokemonsQueryInput): IPokemonConnection
+  pokemonByName(name: string): IPokemon | null
+  pokemonById(id: string): IPokemon | null
   pokemonTypes(): string[]
 }
 
-export interface Mutation {
-  favoritePokemon(id: string): Pokemon | null
-  unFavoritePokemon(id: string): Pokemon | null
+export interface IMutation {
+  favoritePokemon(id: string): IPokemon | null
+  unFavoritePokemon(id: string): IPokemon | null
 }
 
-export interface Root {
-  query: Query
+export interface IRoot {
+  query: IQuery
 }
