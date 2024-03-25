@@ -1,7 +1,7 @@
 'use client'
 
 import { PageLayout } from '@/components/layouts/PageLayout/PageLayout'
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 import styles from './error.module.scss'
 import { Title } from '@/components/atoms/Title/Title'
 

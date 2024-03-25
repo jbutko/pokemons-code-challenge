@@ -10,8 +10,8 @@ import { NotificationProvider } from '@/components/providers/NotificationProvide
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Brainsoft frontend code challenge',
-  description: 'Pokemons code challenge, code by Jozef Butko',
+  title: 'Pokedex frontend code challenge',
+  description: 'Code by Jozef Butko',
 }
 
 const RootLayout: TPropsWithChildren = ({ children }) => (

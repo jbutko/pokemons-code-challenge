@@ -1,4 +1,4 @@
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 import { TRSCProps } from '@/types/common.types'
 import { GET_POKEMON_BY_NAME } from '@/core/apollo/queries'
 import { getApolloClient } from '@/core/apollo/client'
