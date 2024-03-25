@@ -8,7 +8,7 @@ import { useUrlParams } from '@/hooks/useUrlParams'
 export const PokemonTypes: React.FC = () => {
   const { data } = useSuspenseQuery(GET_POKEMON_TYPES)
   const { setUrlParams, searchParams } = useUrlParams()
-  const SELECTED_ITEM = searchParams.pokemonType
+  const SELECTED_ITEM = searchParams.pokemonType || ''
 
   if (!data?.pokemonTypes || !data) return <DropdownSkeleton hideLabel size="lg" className={styles.skeleton} />
 
