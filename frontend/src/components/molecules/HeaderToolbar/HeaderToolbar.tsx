@@ -5,13 +5,11 @@ import { PokemonTypes } from '@/components/molecules/PokemonTypes/PokemonTypes'
 import { ListSwitcher } from '@/components/molecules/ListSwitcher/ListSwitcher'
 import { useTransition } from 'react'
 import { useUrlParams } from '@/hooks/useUrlParams'
-import { useBreakpoints } from '@/hooks/useBreakpoint'
 import styles from './header-toolbar.module.scss'
 
 export const HeaderToolbar: React.FC = () => {
   let [, startTransition] = useTransition()
   const { setUrlParams, searchParams } = useUrlParams()
-  const { isLg, isMd, isSm } = useBreakpoints()
 
   const handleSearch = (e: { target: HTMLInputElement; type: 'change' }) => {
     startTransition(() => {
