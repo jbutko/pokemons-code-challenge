@@ -22,6 +22,7 @@
 .tile {
   line-height: 2;
   text-align: center;
+  background-color: $white;
 }
 
 .tile:not(:last-child) {
