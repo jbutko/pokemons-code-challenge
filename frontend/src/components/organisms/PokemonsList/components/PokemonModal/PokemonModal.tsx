@@ -4,7 +4,7 @@ import { TNullable } from '@/types/common.types'
 import { Pokemon } from '@/types/pokemons'
 
 type TProps = {
-  data: TNullable<Pokemon>
+  data?: TNullable<Pokemon>
   onClose: () => void
   launcherButtonRef: React.RefObject<HTMLButtonElement>
 }

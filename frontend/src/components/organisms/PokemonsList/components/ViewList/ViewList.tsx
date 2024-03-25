@@ -14,15 +14,17 @@ type TProps = {
 
 export const ViewList: React.FC<TProps> = ({ data }) => {
   const button = useRef(null)
-  const [activePokemon, setActivePokemon] = useState<TNullable<Pokemon>>(null)
+  const [activePokemonId, setActivePokemonId] = useState<TNullable<string>>(null)
 
-  const handleClose = () => setActivePokemon(null)
+  const handleClose = () => setActivePokemonId(null)
 
   const handleShowModal = (e: React.MouseEvent<HTMLButtonElement>, pokemon: Pokemon) => {
     e.preventDefault()
     e.stopPropagation()
-    setActivePokemon(pokemon)
+    setActivePokemonId(pokemon.id)
   }
+
+  const activePokemon = data.find((pokemon) => pokemon.id === activePokemonId)
 
   return (
     <>
